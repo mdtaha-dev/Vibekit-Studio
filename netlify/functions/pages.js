@@ -180,3 +180,4 @@ export const handler = async (event) => {
 
     return json(404, { error: 'Not found' })
 }
+
