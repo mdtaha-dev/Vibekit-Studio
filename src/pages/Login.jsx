@@ -323,46 +323,40 @@ export default function Login() {
 
                 {/* Bottom Footer */}
                 <footer style={{
-                    position: 'fixed',
+                    position: 'relative',
                     bottom: 0,
                     width: '100%',
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    padding: '1.5rem 2.5rem',
+                    padding: '1rem 1.5rem',
                     color: '#737373',
+                    backgroundColor: 'transparent',
+                    flexWrap: 'wrap',
+                    gap: '0.5rem',
                 }}>
-                    <div style={{
-                        color: '#e8a045',
-                        fontWeight: 700,
-                        fontFamily: "'Syne', sans-serif",
-                        letterSpacing: '0.1em',
-                        fontSize: '0.75rem',
-                    }}>
-                        VIBEKIT
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                        {['Privacy', 'Terms', 'Support'].map((link) => (
+                            <span key={link} style={{
+                                fontFamily: "'DM Sans', sans-serif",
+                                fontSize: '0.625rem',
+                                letterSpacing: '0.1em',
+                                textTransform: 'uppercase',
+                                cursor: 'pointer',
+                            }}>
+                                {link}
+                            </span>
+                        ))}
                     </div>
                     <div style={{
                         fontFamily: "'DM Sans', sans-serif",
                         fontSize: '0.625rem',
                         letterSpacing: '0.1em',
                         textTransform: 'uppercase',
+                        color: '#525252',
                     }}>
-                        © 2025 VIBEKIT STUDIO
-                    </div>
-                    <div style={{ display: 'flex', gap: '1.5rem' }}>
-                        {['Privacy', 'Terms', 'Support'].map((link) => (
-                            <a key={link} href="#" style={{
-                                fontFamily: "'DM Sans', sans-serif",
-                                fontSize: '0.625rem',
-                                letterSpacing: '0.1em',
-                                textTransform: 'uppercase',
-                                color: '#525252',
-                                textDecoration: 'none',
-                            }}>
-                                {link}
-                            </a>
-                        ))}
+                        © 2026 VIBEKIT STUDIO
                     </div>
                 </footer>
 

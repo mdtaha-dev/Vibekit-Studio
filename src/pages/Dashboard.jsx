@@ -379,7 +379,7 @@ export default function Dashboard() {
                     <Link to="/" style={{
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '1rem',
+                        gap: '0.75rem',
                         textDecoration: 'none',
                     }}>
                         <span className="material-symbols-outlined" style={{ color: '#e8a045' }}>grid_view</span>
@@ -388,18 +388,24 @@ export default function Dashboard() {
                             letterSpacing: '0.1em',
                             textTransform: 'uppercase',
                             fontWeight: 700,
-                            fontSize: '1.25rem',
+                            fontSize: '1rem',
                             color: '#f0ede6',
                         }}>
                             VIBEKIT
                         </h1>
                     </Link>
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                        {/* Hide email on small screens */}
                         <span style={{
                             fontFamily: "'DM Sans', sans-serif",
-                            fontSize: '0.875rem',
+                            fontSize: '0.75rem',
                             color: '#616161',
+                            maxWidth: '120px',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            whiteSpace: 'nowrap',
+                            display: window.innerWidth < 480 ? 'none' : 'block',
                         }}>
                             {user?.email}
                         </span>
@@ -415,7 +421,9 @@ export default function Dashboard() {
                                 background: 'none',
                                 border: 'none',
                                 cursor: 'pointer',
-                                padding: '0.5rem 1rem',
+                                padding: '0.5rem',
+                                minHeight: '44px',
+                                minWidth: '44px',
                             }}
                         >
                             LOGOUT
@@ -457,16 +465,17 @@ export default function Dashboard() {
                     }}>
                         <div style={{ position: 'relative' }}>
                             <h2 style={{
+                                textAlign: 'center',
                                 fontFamily: "'Syne', sans-serif",
                                 fontWeight: 800,
-                                fontSize: '3rem',
+                                fontSize: 'clamp(2rem, 8vw, 3rem)',
                                 letterSpacing: '-0.02em',
                                 textTransform: 'uppercase',
                                 marginBottom: '0.5rem',
                             }}>
                                 MY PAGES
                             </h2>
-                            <div style={{ width: '33%', height: '2px', backgroundColor: '#e8a045' }} />
+                            <div style={{ width: '100%', height: '2px', backgroundColor: '#e8a045' }} />
                             <p style={{
                                 marginTop: '1rem',
                                 fontFamily: "'DM Sans', sans-serif",
@@ -484,6 +493,7 @@ export default function Dashboard() {
                             disabled={creating}
                             style={{
                                 display: 'inline-flex',
+                                justifyContent: 'center',
                                 alignItems: 'center',
                                 gap: '0.5rem',
                                 backgroundColor: '#e8a045',

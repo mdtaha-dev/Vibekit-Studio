@@ -117,14 +117,14 @@ export default function Signup() {
 
                 {/* Header */}
                 <header style={{
-                    position: 'fixed',
+                    position: 'relative',
                     top: 0,
                     width: '100%',
                     zIndex: 50,
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    padding: '1.5rem 2rem',
+                    padding: '2rem 2rem',
                     backgroundColor: 'transparent',
                 }}>
                     <Link to="/" style={{
@@ -206,8 +206,14 @@ export default function Signup() {
                         }}>
 
                             {/* Card Header */}
-                            <div style={{ marginBottom: '2.5rem', textAlign: 'left' }}>
+                            <div style={{
+                                marginBottom: '2.5rem',
+                                textAlign: 'left',
+                                paddingTop: '2rem',
+
+                            }}>
                                 <p style={{
+                                    textAlign: 'center',
                                     color: '#e8a045',
                                     fontFamily: "'Syne', sans-serif",
                                     fontWeight: 700,
@@ -219,9 +225,10 @@ export default function Signup() {
                                     JOIN THE STUDIO
                                 </p>
                                 <h1 style={{
-                                    fontSize: '2.5rem',
+                                    textAlign: 'center',
                                     fontFamily: "'Syne', sans-serif",
                                     fontWeight: 800,
+                                    fontSize: 'clamp(1.5rem, 8vw, 2.5rem)', // ← replace fixed size with clamp
                                     letterSpacing: '-0.02em',
                                     color: '#f0ede6',
                                     marginBottom: '0.5rem',
@@ -393,6 +400,7 @@ export default function Signup() {
                         <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'flex-end' }}>
                             <div style={{ textAlign: 'right' }}>
                                 <p style={{
+                                    opacity: 0.2,
                                     fontSize: '0.5625rem',
                                     fontFamily: "'DM Sans', sans-serif",
                                     letterSpacing: '0.4em',
@@ -402,6 +410,7 @@ export default function Signup() {
                                     ESTABLISHED MMXXV
                                 </p>
                                 <p style={{
+                                    opacity: 0.2,
                                     fontSize: '0.5625rem',
                                     fontFamily: "'DM Sans', sans-serif",
                                     letterSpacing: '0.4em',
@@ -416,26 +425,27 @@ export default function Signup() {
                     </div>
                 </main>
 
-                {/* Footer */}
                 <footer style={{
-                    position: 'fixed',
+                    position: 'relative',
                     bottom: 0,
                     width: '100%',
                     display: 'flex',
+                    flexDirection: 'row',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    padding: '2rem 2.5rem',
+                    padding: '1rem 1.5rem',
                     color: '#737373',
                     backgroundColor: 'transparent',
+                    flexWrap: 'wrap',
+                    gap: '0.5rem',
                 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                         {['Privacy', 'Terms', 'Support'].map((link) => (
                             <span key={link} style={{
                                 fontFamily: "'DM Sans', sans-serif",
                                 fontSize: '0.625rem',
                                 letterSpacing: '0.1em',
                                 textTransform: 'uppercase',
-                                opacity: 0.8,
                                 cursor: 'pointer',
                             }}>
                                 {link}
@@ -449,7 +459,7 @@ export default function Signup() {
                         textTransform: 'uppercase',
                         color: '#525252',
                     }}>
-                        © 2025 VIBEKIT STUDIO
+                        © 2026 VIBEKIT STUDIO
                     </div>
                 </footer>
 
