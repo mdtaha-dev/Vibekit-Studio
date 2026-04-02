@@ -4,7 +4,7 @@
 
 A full-stack web application where users can pick a design theme, build a mini-site using a page editor, and publish it to a public URL.
 
-**Live URL:** https://your-netlify-url.netlify.app
+**Live URL:** https://vibe-kit-studio.netlify.app/
 
 ---
 
