@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom'
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+  @import url('https://api.fontshare.com/v2/css?f[]=clash-display@700&display=swap')
+  @import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&display=swap')
 
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -154,13 +156,14 @@ function HeroSection() {
                 </div>
 
                 <h1 className="syne-wide" style={{
+                    fontFamily: "'Cabinet Grotesk', sans-serif",
                     fontSize: "clamp(2.5rem, 10vw, 4.5rem)",
                     fontWeight: 800,
                     color: "#f0ede6",
                     lineHeight: 1.1,
                     marginBottom: "1.5rem",
                 }}>
-                    VibeKit <br /> Studio
+                    VIBEKIT <br /> STUDIO
                 </h1>
 
                 <p style={{
