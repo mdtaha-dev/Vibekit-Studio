@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom'
 
 const tailwindConfig = `
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Space+Grotesk:wght@300..700&family=Manrope:wght@200..800&display=swap');
@@ -38,6 +39,7 @@ const colors = {
     background: "#0a0a0a",
 };
 
+
 function Icon({ name, className = "" }) {
     return (
         <span className={`material-symbols-outlined ${className}`}>{name}</span>
@@ -45,6 +47,7 @@ function Icon({ name, className = "" }) {
 }
 
 function Header() {
+    const navigate = useNavigate()
     return (
         <header
             style={{
@@ -77,6 +80,7 @@ function Header() {
                 </span>
             </div>
             <button
+                onClick={() => navigate('/signup')}
                 className="syne-wide"
                 style={{
                     letterSpacing: "0.15em",
@@ -97,6 +101,7 @@ function Header() {
 }
 
 function HeroSection() {
+    const navigate = useNavigate()
     return (
         <section
             style={{
@@ -176,6 +181,7 @@ function HeroSection() {
                     style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
                 >
                     <button
+                        onClick={() => navigate('/signup')}
                         className="glow-subtle"
                         style={{
                             backgroundColor: colors.primaryContainer,
@@ -195,6 +201,7 @@ function HeroSection() {
                         Create your first page
                     </button>
                     <button
+                        onClick={() => navigate('/login')}
                         style={{
                             backgroundColor: "transparent",
                             border: `1px solid ${colors.outlineVariant}`,
@@ -210,7 +217,7 @@ function HeroSection() {
                             transition: "all 0.3s",
                         }}
                     >
-                        Explore the Archive
+                        Sign In
                     </button>
                 </div>
             </div>
@@ -317,6 +324,7 @@ function FeatureCard({ icon, title, description, decorative }) {
 }
 
 function FeaturesSection() {
+    const navigate = useNavigate()
     const features = [
         {
             title: "Pick a Vibe",
@@ -572,6 +580,7 @@ function ThemesSection() {
 }
 
 function CTASection() {
+    const navigate = useNavigate()
     return (
         <section style={{ padding: "0 2rem 3rem" }}>
             <div
@@ -605,6 +614,7 @@ function CTASection() {
                     READY TO <br /> START?
                 </h2>
                 <button
+                    onClick={() => navigate('/signup')}
                     style={{
                         width: "100%",
                         maxWidth: "20rem",
@@ -662,7 +672,7 @@ function Footer() {
                         color: "rgba(240,237,230,0.4)",
                     }}
                 >
-                    © 2024 VIBEKIT STUDIO. ARCHITECTURAL PRECISION.
+                    © 2026 VIBEKIT STUDIO. ARCHITECTURAL PRECISION.
                 </p>
             </div>
             <nav style={{ display: "flex", gap: "1.5rem" }}>
@@ -689,6 +699,9 @@ function Footer() {
 }
 
 export default function Landing() {
+
+    const navigate = useNavigate()
+
     return (
         <>
             <style>{`
