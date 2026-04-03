@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAuth } from '../context/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 
 const styles = `
@@ -111,8 +112,11 @@ function Header() {
     )
 }
 
+
 function HeroSection() {
     const navigate = useNavigate()
+    const { user, loading } = useAuth()
+
     return (
         <section style={{
             padding: "0 1.5rem",
@@ -186,50 +190,78 @@ function HeroSection() {
                         gap: "0.875rem",
                         width: "100%",
                         maxWidth: "22rem",
+                        alignSelf: "center",
+                        justifyContent: "center"
                     }}
                 >
-                    <button
-                        onClick={() => navigate('/signup')}
-                        className="glow-subtle"
-                        style={{
-                            backgroundColor: colors.primaryContainer,
-                            color: colors.onPrimaryContainer,
-                            padding: "1rem 2rem",
-                            fontFamily: "'Syne', sans-serif",
-                            fontWeight: 700,
-                            textTransform: "uppercase",
-                            letterSpacing: "0.1em",
-                            fontSize: "0.875rem",
-                            borderRadius: "0.375rem",
-                            border: "none",
-                            cursor: "pointer",
-                            transition: "all 0.3s",
-                            minHeight: "44px",
-                        }}
-                    >
-                        Create your first page
-                    </button>
-                    <button
-                        onClick={() => navigate('/login')}
-                        style={{
-                            backgroundColor: "transparent",
-                            border: `1px solid ${colors.outlineVariant}`,
-                            color: colors.onSurface,
-                            padding: "1rem 2rem",
-                            fontFamily: "'Syne', sans-serif",
-                            fontWeight: 700,
-                            textTransform: "uppercase",
-                            letterSpacing: "0.1em",
-                            fontSize: "0.875rem",
-                            borderRadius: "0.375rem",
-                            cursor: "pointer",
-                            transition: "all 0.3s",
-                            minHeight: "44px",
-                            whiteSpace: "nowrap",
-                        }}
-                    >
-                        Sign In
-                    </button>
+                    {loading ? null : user ? (
+                        <button
+                            onClick={() => navigate('/app')}
+                            className="glow-subtle"
+                            style={{
+                                backgroundColor: colors.primaryContainer,
+                                color: colors.onPrimaryContainer,
+                                padding: "1rem 2rem",
+                                fontFamily: "'Syne', sans-serif",
+                                fontWeight: 700,
+                                textTransform: "uppercase",
+                                letterSpacing: "0.1em",
+                                fontSize: "0.875rem",
+                                borderRadius: "0.375rem",
+                                border: "none",
+                                cursor: "pointer",
+                                transition: "all 0.3s",
+                                minHeight: "44px",
+                            }}
+                        >
+                            Go to Dashboard
+                        </button>
+                    ) : (
+                        <>
+                            <button
+                                onClick={() => navigate('/signup')}
+                                className="glow-subtle"
+                                style={{
+                                    backgroundColor: colors.primaryContainer,
+                                    color: colors.onPrimaryContainer,
+                                    padding: "1rem 2rem",
+                                    fontFamily: "'Syne', sans-serif",
+                                    fontWeight: 700,
+                                    textTransform: "uppercase",
+                                    letterSpacing: "0.1em",
+                                    fontSize: "0.875rem",
+                                    borderRadius: "0.375rem",
+                                    border: "none",
+                                    cursor: "pointer",
+                                    transition: "all 0.3s",
+                                    minHeight: "44px",
+                                }}
+                            >
+                                Create your first page
+                            </button>
+                            <button
+                                onClick={() => navigate('/login')}
+                                style={{
+                                    backgroundColor: "transparent",
+                                    border: `1px solid ${colors.outlineVariant}`,
+                                    color: colors.onSurface,
+                                    padding: "1rem 2rem",
+                                    fontFamily: "'Syne', sans-serif",
+                                    fontWeight: 700,
+                                    textTransform: "uppercase",
+                                    letterSpacing: "0.1em",
+                                    fontSize: "0.875rem",
+                                    borderRadius: "0.375rem",
+                                    cursor: "pointer",
+                                    transition: "all 0.3s",
+                                    minHeight: "44px",
+                                    whiteSpace: "nowrap",
+                                }}
+                            >
+                                Sign In
+                            </button>
+                        </>
+                    )}
                 </div>
             </div>
 
@@ -687,5 +719,4 @@ export default function Landing() {
         </>
     )
 }
-
 
